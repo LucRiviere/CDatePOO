@@ -45,7 +45,4 @@ void CDate::getDate(int& a, int& m, int& j, int& h, int& mn, int& sec, string& N
 
 }
 
-CDate::~CDate()
-{
-    //dtor
-}
+
