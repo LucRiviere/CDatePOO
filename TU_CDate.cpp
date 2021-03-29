@@ -3,7 +3,7 @@
 // date : 19/03/2021
 // fichier: TU_CDate.cpp
 // Programme de test unitaire de la classe CDate
-// Difficulté C
+// DifficultÃ© C
 //********************************************************
 
 #include "../include/CDate.h"
@@ -76,8 +76,8 @@ int main ()
 
 //**************************************************************
 // Fonction:saisirDate
-// Rôle :	permet de saisir les informations d'une date
-// Paramètres de sortie : le jour, mois, année, secondes, minutes, heures saisies
+// RÃ´le :	permet de saisir les informations d'une date
+// ParamÃ¨tres de sortie : le jour, mois, annÃ©e, secondes, minutes, heures saisies
 //***************************************************************
 void saisirDate(int &j, int &m, int &a, int &s, int &mn, int &h, string &NJour)
 {
@@ -100,8 +100,8 @@ void saisirDate(int &j, int &m, int &a, int &s, int &mn, int &h, string &NJour)
 }
 //**************************************************************
 // Fonction:afficherDate
-// Rôle :	affiche la date passée en paramètre
-// Paramètre d'entrée : la date à afficher
+// RÃ´le :	affiche la date passÃ©e en paramÃ¨tre
+// ParamÃ¨tre d'entrÃ©e : la date Ã  afficher
 //***************************************************************
 void afficherDate (CDate &d)
 
@@ -125,7 +125,7 @@ int j,m,a;
 
 //**************************************************************
 // Fonction:test_constructeur
-// Rôle :	teste le constructeur et affiche la date  à l'aide des méthodes d'accès
+// RÃ´le :	teste le constructeur et affiche la date  Ã  l'aide des mÃ©thodes d'accÃ¨s
 //***************************************************************
 
 void test_constructeur()
@@ -141,7 +141,7 @@ void test_constructeur()
     saisirDate(j,m,a,s,mn,h,NJour);
 
 
-	// Création de la date
+	// CrÃ©ation de la date
 
 	CDate d(a,m,j,h,mn,s,NJour);
 
@@ -161,7 +161,7 @@ void test_constructeur()
 
 //**************************************************************
 // Fonction:test_constructeur
-// Rôle :	teste le constructeur sans paramètre de la classe CDate
+// RÃ´le :	teste le constructeur sans paramÃ¨tre de la classe CDate
 //***************************************************************
 
 void test_constructeurSansParametre()
@@ -172,7 +172,7 @@ void test_constructeurSansParametre()
 	cout << "Test du constructeur sans parametre de la classe CDate:" << endl;
 	cout << "-------------------------------------------------------" << endl;
 
-	// Création de la date
+	// CrÃ©ation de la date
 	CDate d(a,m,j,h,mn,s,NJour);
 
 
@@ -192,96 +192,96 @@ void test_constructeurSansParametre()
 
 //**************************************************************
 // Fonction:test_egal
-// Rôle :	teste de l'opérateur == de la classe CDate
+// RÃ´le :	teste de l'opÃ©rateur == de la classe CDate
 //***************************************************************
 void test_egal()
 {
 	int j, m, a,s,mn,h;
 	string NJour;
-	cout << "Test de la méthode isEqual de la classe CDate:" << endl;
+	cout << "Test de la mÃ©thode isEqual de la classe CDate:" << endl;
 	cout << "--------------------------------------------" << endl;
 
 	cout << "Saisir la 1ere date utilisee pour tester" << endl;
     saisirDate(j,m,a,s,mn,h,NJour);
 
-	// Création de la 1ère date
+	// CrÃ©ation de la 1Ã¨re date
 	CDate d1(a,m,j,h,mn,s,NJour);
 
 	cout << "Saisir la 2eme date utilisee pour tester" << endl;
     saisirDate(j,m,a,s,mn,h,NJour);
 
-    // Création de la 2ème date
+    // CrÃ©ation de la 2Ã¨me date
 
 	CDate d2(a,m,j,h,mn,s,NJour);
 
 
 
-	// Comparer les deux dates avec == et afficher le résultat de la comparaison
+	// Comparer les deux dates avec == et afficher le rÃ©sultat de la comparaison
 
 	if (d1 == d2)
     {
-        cout << "Les deux dates sont égales " << endl;
+        cout << "Les deux dates sont Ã©gales " << endl;
     }
     else
     {
-        cout << "Les deux dates ne sont pas égales " << endl;
+        cout << "Les deux dates ne sont pas Ã©gales " << endl;
     }
 }
 
 //**************************************************************
 // Fonction:test_sup
-// Rôle :	teste de l'opérateur >  de la classe CDate
+// RÃ´le :	teste de l'opÃ©rateur >  de la classe CDate
 //***************************************************************
 
 void test_sup()
 {
 	int j, m, a,s,mn,h;
 	string NJour;
-	cout << "Test de la méthode isLater  de la classe CDate:" << endl;
+	cout << "Test de la mÃ©thode isLater  de la classe CDate:" << endl;
 	cout << "--------------------------------------------" << endl;
 
 	cout << "Saisir la 1ere date utilisee pour tester" << endl;
     saisirDate(j,m,a,s,mn,h,NJour);
 
-	// Création de la 1ère date
+	// CrÃ©ation de la 1Ã¨re date
 	CDate d1(a,m,j,h,mn,s,NJour);
 
 	cout << "Saisir la 2eme date utilisee pour tester" << endl;
     saisirDate(j,m,a,s,mn,h,NJour);
 
-	// Création de la 2ème date
+	// CrÃ©ation de la 2Ã¨me date
 	CDate d2(a,m,j,h,mn,s,NJour);
 
-	// Comparer les deux dates avec > et afficher le résultat de la comparaison
+	// Comparer les deux dates avec > et afficher le rÃ©sultat de la comparaison
 	if (d1 > d2)
     {
-        cout << "La 1ère date est la plus grande " << endl;
-        cout << "La 2ème date est la plus petite " << endl;
+        cout << "La 1Ã¨re date est la plus grande " << endl;
+        cout << "La 2Ã¨me date est la plus petite " << endl;
     }
     else
     {
-        cout << "La 2ème date est la plus grande " << endl;
-        cout << "La 1ère date est la plus petite " << endl;
+        cout << "La 2Ã¨me date est la plus grande " << endl;
+        cout << "La 1Ã¨re date est la plus petite " << endl;
     }
 }
 
 
 //**************************************************************
 // Fonction:test_inf
-// Rôle :	teste l'opérateur < de la classe CDate
+// RÃ´le :	teste l'opÃ©rateur < de la classe CDate
 //***************************************************************
 
 void test_inf()
 {
 	int j, m, a,s,mn,h;
 	string NJour;
-	cout << "Test de la méthode isEarlier de la classe CDate:" << endl;
+	cout << "Test de la mÃ©thode isEarlier de la classe CDate:" << endl;
 	cout << "--------------------------------------------" << endl;
 
 	cout << "Saisir la 1ere date utilisee pour tester" << endl;
     saisirDate(j,m,a,s,mn,h,NJour);
 
-	// Création de la 1ère date
+	// CrÃ©ation de la 1Ã¨re date
 	CDate d1(a,m,j,h,mn,s,NJour);
 
 
@@ -289,32 +289,32 @@ void test_inf()
 	cout << "Saisir la 2eme date utilisee pour tester" << endl;
     saisirDate(j,m,a,s,mn,h,NJour);
 
-	// Création de la 2ème date
+	// CrÃ©ation de la 2Ã¨me date
 	CDate d2(a,m,j,h,mn,s,NJour);
 
 
-	// Comparer les deux dates avec > et afficher le résultat de la comparaison
+	// Comparer les deux dates avec > et afficher le rÃ©sultat de la comparaison
 	if (d1 > d2)
     {
-        cout << "La 1ère date est la plus grande " << endl;
-        cout << "La 2ème date est la plus petite " << endl;
+        cout << "La 1Ã¨re date est la plus grande " << endl;
+        cout << "La 2Ã¨me date est la plus petite " << endl;
     }
     else
     {
-        cout << "La 2ème date est la plus grande " << endl;
-        cout << "La 1ère date est la plus petite " << endl;
+        cout << "La 2Ã¨me date est la plus grande " << endl;
+        cout << "La 1Ã¨re date est la plus petite " << endl;
     }
 
 }
 
 //**************************************************************
 // Fonction:test_incrementerSec
-// Rôle :	teste la la méthode incrémenterSec de la classe CDate
+// RÃ´le :	teste la la mÃ©thode incrÃ©menterSec de la classe CDate
 //***************************************************************
 void test_incrementerSec()
 {
-	int j, m, a, h, mn, s;
-	cout << "Test de la méthode incrementerSec de la classe CDate:" << endl;
+	int j, m, a, h, mn, s, NJour;
+	cout << "Test de la mÃ©thode incrementerSec de la classe CDate:" << endl;
 	cout << "--------------------------------------------" << endl;
 
 
@@ -325,3 +325,4 @@ void test_incrementerSec()
 
 
 }
+
