@@ -1,12 +1,12 @@
 //********************************************************
 // Auteur : MP Pinaud
+// modifié par Luc RIVIERE
 // date : 19/03/2021
 // fichier: TU_CDate.cpp
 // Programme de test unitaire de la classe CDate
 // Difficulté C
 //********************************************************
-
-#include "../include/CDate.h"
+#include "../include\CDate2.h"
 #include <iostream>
 using namespace std;
 
@@ -19,11 +19,12 @@ void test_sup();
 void test_inf();
 void test_incrementerSec();
 void saisirDate(int &j, int &m, int &a, int &s, int &mn, int &h, string &NJour);
-void afficherDate(CDate &d);
+void afficherDate(CDate2 &d);
 
 int main ()
 
 {
+
 
 	int rep;
 	do
@@ -103,22 +104,15 @@ void saisirDate(int &j, int &m, int &a, int &s, int &mn, int &h, string &NJour)
 // Rôle :	affiche la date passée en paramètre
 // Paramètre d'entrée : la date à afficher
 //***************************************************************
-void afficherDate (CDate &d)
-
-
+void afficherDate (CDate2 &d)
 {
-int j,m,a;
+    int jour,mois,annee;
 
     // Affichage de la date sous la forme jour/mois/annee
 
-    cout << "Jour :";
-	cin >>j;
+    cout << jour << mois  << annee  <<endl;
 
-	cout << "Mois :";
-	cin >>m;
 
-	cout << "Annee :";
-	cin >>a;
 
 }
 
@@ -143,19 +137,12 @@ void test_constructeur()
 
 	// Création de la date
 
-	CDate d(a,m,j,h,mn,s,NJour);
+	CDate2 d(a,m,j,h,mn,s,NJour);
 
-
+    int jour,mois,annee;
 	// Affichage de la date sous la forme jour/mois/annee
 
-    cout << "Jour :";
-	cin >>j;
-
-	cout << "Mois :";
-	cin >>m;
-
-	cout << "Annee :";
-	cin >>a;
+    cout << jour << mois << annee << endl;
 
 }
 
@@ -173,7 +160,7 @@ void test_constructeurSansParametre()
 	cout << "-------------------------------------------------------" << endl;
 
 	// Création de la date
-	CDate d(a,m,j,h,mn,s,NJour);
+	CDate2 d(a,m,j,h,mn,s,NJour);
 
 
 	// Affichage de la date sous la forme jour/mois/annee
@@ -205,14 +192,14 @@ void test_egal()
     saisirDate(j,m,a,s,mn,h,NJour);
 
 	// Création de la 1ère date
-	CDate d1(a,m,j,h,mn,s,NJour);
+	CDate2 d1(a,m,j,h,mn,s,NJour);
 
 	cout << "Saisir la 2eme date utilisee pour tester" << endl;
     saisirDate(j,m,a,s,mn,h,NJour);
 
     // Création de la 2ème date
 
-	CDate d2(a,m,j,h,mn,s,NJour);
+	CDate2 d2(a,m,j,h,mn,s,NJour);
 
 
 
@@ -244,13 +231,13 @@ void test_sup()
     saisirDate(j,m,a,s,mn,h,NJour);
 
 	// Création de la 1ère date
-	CDate d1(a,m,j,h,mn,s,NJour);
+	CDate2 d1(a,m,j,h,mn,s,NJour);
 
 	cout << "Saisir la 2eme date utilisee pour tester" << endl;
     saisirDate(j,m,a,s,mn,h,NJour);
 
 	// Création de la 2ème date
-	CDate d2(a,m,j,h,mn,s,NJour);
+	CDate2 d2(a,m,j,h,mn,s,NJour);
 
 	// Comparer les deux dates avec > et afficher le résultat de la comparaison
 	if (d1 > d2)
@@ -282,7 +269,7 @@ void test_inf()
     saisirDate(j,m,a,s,mn,h,NJour);
 
 	// Création de la 1ère date
-	CDate d1(a,m,j,h,mn,s,NJour);
+	CDate2 d1(a,m,j,h,mn,s,NJour);
 
 
 
@@ -290,19 +277,19 @@ void test_inf()
     saisirDate(j,m,a,s,mn,h,NJour);
 
 	// Création de la 2ème date
-	CDate d2(a,m,j,h,mn,s,NJour);
+	CDate2 d2(a,m,j,h,mn,s,NJour);
 
 
-	// Comparer les deux dates avec > et afficher le résultat de la comparaison
-	if (d1 > d2)
+	// Comparer les deux dates avec < et afficher le résultat de la comparaison
+	if (d1 < d2)
     {
-        cout << "La 1ère date est la plus grande " << endl;
-        cout << "La 2ème date est la plus petite " << endl;
+        cout << "La 1ère date est la plus petite " << endl;
+        cout << "La 2ème date est la plus grande " << endl;
     }
     else
     {
-        cout << "La 2ème date est la plus grande " << endl;
-        cout << "La 1ère date est la plus petite " << endl;
+        cout << "La 2ème date est la plus petite " << endl;
+        cout << "La 1ère date est la plus grande " << endl;
     }
 
 }
