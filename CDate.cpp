@@ -1,4 +1,4 @@
-#include "CDate2.h"
+#include "CDate.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -8,7 +8,7 @@ using namespace std;
     // Sortie : La date créée
 
 
-CDate2::CDate2(int annee, int mois,int jour, int heure, int minute, int seconde, string nom_jour)
+CDate::CDate(int annee, int mois,int jour, int heure, int minute, int seconde, string nom_jour)
 {
     this->annee = annee;
     this->mois = mois;
@@ -24,7 +24,7 @@ CDate2::CDate2(int annee, int mois,int jour, int heure, int minute, int seconde,
     // Paramètre d'entrée : annee,mois,jour,heure,minute,seconde,nom du jour
     // Sortie : objet date
 
-void CDate2::getDate(int& a, int& m, int& j, int& h, int& mn, int& sec, string& NJour)
+void CDate::getDate(int& a, int& m, int& j, int& h, int& mn, int& sec, string& NJour)
 {
     a= this->annee;
     m=this->mois;
@@ -39,15 +39,33 @@ void CDate2::getDate(int& a, int& m, int& j, int& h, int& mn, int& sec, string& 
     // Entrée : La date appelant la méthode et la date dont on fait la comparaison
     // Sortie : C'est un booléen qui indique si les deux dates sont inférieures ou supérieures
 
-    bool CDate2::operator > (const CDate2 d)
+bool CDate::operator < (const CDate d)
     {
-        return (this->annee > d.annee);
+        if((*this) > d || (*this) ==d)
+        {
+            return false;
+        }
+        return true;
     }
-    bool CDate2::operator < (const CDate2 d)
+
+bool CDate::operator > (const CDate d)
     {
-        return (this->annee < d.annee);
+        bool resultat=false;
+
+        resultat=((this->annee>d.annee)
+                  ||((this->annee==d.annee)&&(this->mois>d.mois))
+                  ||((this->annee==d.annee)&&(this->mois==d.mois)&&(this->jour>d.jour))
+                  ||((this->annee==d.annee)&&(this->mois==d.mois)&&(this->jour==d.jour)&&(this->heure>d.heure))
+                  ||((this->annee==d.annee)&&(this->mois==d.mois)&&(this->jour==d.jour)&&(this->heure==d.heure)&&(this->minute>d.minute))
+                  ||((this->annee==d.annee)&&(this->mois==d.mois)&&(this->jour==d.jour)&&(this->heure==d.heure)&&(this->minute==d.minute)&&(this->seconde>d.seconde)));
+
+        return resultat;
     }
-    bool CDate2::operator == (const CDate2 d)
+
+bool CDate::operator == (const CDate d)
+
     {
         return (this->annee == d.annee && this->mois == d.mois && this->jour == d.jour && this->heure == d.heure && this->minute == d.minute && this->seconde == d.seconde && this->nom_jour == d.nom_jour);
     }
+
+
